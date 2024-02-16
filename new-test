@@ -1,11 +1,5 @@
 FROM big-star-collectibles:test AS base
-
 WORKDIR /app
-
 COPY . /app
-
-
 FROM base AS builder
-
-
 CMD ["flask", "run", "--host=0.0.0.0"]
