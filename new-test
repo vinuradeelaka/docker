@@ -1,14 +1,11 @@
-# Use the provided base image as the base image
 FROM big-star-collectibles:test AS base
 
-# Set the working directory in the container to /app
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
 COPY . /app
 
-# Use the base image to build the application
+
 FROM base AS builder
 
-# Run the command to start the Flask application
+
 CMD ["flask", "run", "--host=0.0.0.0"]
